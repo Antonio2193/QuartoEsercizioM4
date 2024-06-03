@@ -1,0 +1,32 @@
+.barraRicerca {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    max-width: 200px; /* Imposta la larghezza massima delle card */
+    margin: 0 auto;   /* Centra le card all'interno della colonna */
+}
+
+.card-img-top {
+    height: 300px;    /* Imposta l'altezza delle immagini */
+    object-fit: cover; /* Mantiene le proporzioni delle immagini */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mt-auto {
+    margin-top: auto; /* Margine superiore automatico per spingere gli elementi verso il basso */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
