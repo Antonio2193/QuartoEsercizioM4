@@ -30,3 +30,21 @@
 .justify-content-between {
     justify-content: space-between;
 }
+
+ .card-body .d-flex {
+    flex-wrap: wrap; /* Permette ai bottoni di andare su più righe se necessario */
+    gap: 2px; /* Spazio tra i bottoni */
+}  
+
+.btn{
+    width: 80px;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#secPage{
+    background-color: black;
+    color: yellow;
+}

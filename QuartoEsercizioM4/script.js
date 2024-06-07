@@ -25,7 +25,7 @@ function displayBooks(books) {
     // Aggiungo le card dei libri
     books.forEach(book => {
         let containerCard = document.createElement('div');
-        containerCard.classList.add('col-sm-6', 'col-md-4', 'col-lg-3', 'mb-4');
+        containerCard.classList.add('col-sm-6', 'col-md-4', 'col-lg-2', 'mb-4');
 
         // Creo la card
         let card = document.createElement('div');
@@ -57,19 +57,27 @@ function displayBooks(books) {
 
         // Creo il pulsante per aggiungere al carrello
         let cartButton = document.createElement('button');
-        cartButton.classList.add('btn', 'btn-primary', 'me-2');
-        cartButton.textContent = 'Carrello';
+        cartButton.classList.add('btn', 'btn-primary','w-100');
+        cartButton.textContent = 'Cart';
         cartButton.onclick = () => addToCart(book, card);  // Funzione per aggiungere al carrello
 
         // Creo il pulsante per nascondere la card
         let nascButton = document.createElement('button');
         nascButton.classList.add('btn', 'btn-secondary');
-        nascButton.textContent = 'Nascondi';
+        nascButton.textContent = 'Hide';
         nascButton.onclick = () => containerCard.style.display = 'none';  // Nascondo la card
+
+        // Crea il link per mostrare i dettagli del libro
+        let linkInfo = document.createElement('a');
+        linkInfo.href = './dettagli.html?asin=' + book.asin +'&price=' + book.price;
+        linkInfo.target = '_blank';
+        linkInfo.textContent = 'Info';
+        
 
         // Aggiungo i bottoni al container
         buttonContainer.appendChild(cartButton);
         buttonContainer.appendChild(nascButton);
+        buttonContainer.appendChild(linkInfo);
 
         // Aggiungo i nodi all'elemento card
         cardBody.appendChild(cardTitle);
@@ -104,7 +112,7 @@ function displayCart() {
     cart.forEach(book => {
         let li = document.createElement('li');
         li.classList.add('list-group-item');
-        li.textContent = book.title + book.price + "$";
+        li.textContent = book.title +" "+book.price + "$";
         console.log('Adding book:', book);
         cartItemsContainer.appendChild(li);
     });
@@ -136,4 +144,5 @@ function emptyCart() {
     cartTot.textContent = 'Totale: ' + prezzoF.toFixed(2) + "$"
     
 }
+
 
